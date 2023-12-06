@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0vix3zc" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.5.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.1.0">
+  <bpmn:process id="Main" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_1w8g7e6</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="Event_112hinb">
+      <bpmn:incoming>Flow_0p88n46</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:subProcess id="p0468353641.bpmn" name="Phase P">
+      <bpmn:incoming>Flow_1w8g7e6</bpmn:incoming>
+      <bpmn:outgoing>Flow_0cy8lw9</bpmn:outgoing>
+    </bpmn:subProcess>
+    <bpmn:subProcess id="p0468353642.bpmn" name="Phase Q">
+      <bpmn:incoming>Flow_0cy8lw9</bpmn:incoming>
+      <bpmn:outgoing>Flow_0fi9vqo</bpmn:outgoing>
+    </bpmn:subProcess>
+    <bpmn:subProcess id="p0468353643.bpmn" name="Phase R">
+      <bpmn:incoming>Flow_0fi9vqo</bpmn:incoming>
+      <bpmn:outgoing>Flow_0p88n46</bpmn:outgoing>
+    </bpmn:subProcess>
+    <bpmn:sequenceFlow id="Flow_1w8g7e6" sourceRef="StartEvent_1" targetRef="p0468353641.bpmn" />
+    <bpmn:sequenceFlow id="Flow_0p88n46" sourceRef="p0468353643.bpmn" targetRef="Event_112hinb" />
+    <bpmn:sequenceFlow id="Flow_0cy8lw9" sourceRef="p0468353641.bpmn" targetRef="p0468353642.bpmn" />
+    <bpmn:sequenceFlow id="Flow_0fi9vqo" sourceRef="p0468353642.bpmn" targetRef="p0468353643.bpmn" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Main">
+      <bpmndi:BPMNShape id="BPMNShape_07r3hnf" bpmnElement="StartEvent_1">
+        <dc:Bounds x="172" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_112hinb_di" bpmnElement="Event_112hinb">
+        <dc:Bounds x="745" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_09nbfa1_di" bpmnElement="p0468353641.bpmn">
+        <dc:Bounds x="263" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_104x9p3_di" bpmnElement="p0468353642.bpmn">
+        <dc:Bounds x="423" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1rinnal_di" bpmnElement="p0468353643.bpmn">
+        <dc:Bounds x="583" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1w8g7e6_di" bpmnElement="Flow_1w8g7e6">
+        <di:waypoint x="208" y="120" />
+        <di:waypoint x="263" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0p88n46_di" bpmnElement="Flow_0p88n46">
+        <di:waypoint x="683" y="120" />
+        <di:waypoint x="745" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0cy8lw9_di" bpmnElement="Flow_0cy8lw9">
+        <di:waypoint x="363" y="120" />
+        <di:waypoint x="423" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0fi9vqo_di" bpmnElement="Flow_0fi9vqo">
+        <di:waypoint x="523" y="120" />
+        <di:waypoint x="583" y="120" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_19qc9kq">
+    <bpmndi:BPMNPlane id="BPMNPlane_1rnfk7w" bpmnElement="p0468353641.bpmn" />
+  </bpmndi:BPMNDiagram>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1ar9k65">
+    <bpmndi:BPMNPlane id="BPMNPlane_1ur7yxg" bpmnElement="p0468353642.bpmn" />
+  </bpmndi:BPMNDiagram>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1toudsr">
+    <bpmndi:BPMNPlane id="BPMNPlane_0e9urvv" bpmnElement="p0468353643.bpmn" />
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

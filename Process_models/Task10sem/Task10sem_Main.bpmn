@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1r800gc" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.5.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.1.0">
+  <bpmn:process id="Main" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_1w8g7e6</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="Event_112hinb">
+      <bpmn:incoming>Flow_0p88n46</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:subProcess id="Subprocess10F.bpmn" name="Phase F">
+      <bpmn:incoming>Flow_1w8g7e6</bpmn:incoming>
+      <bpmn:outgoing>Flow_0cy8lw9</bpmn:outgoing>
+    </bpmn:subProcess>
+    <bpmn:subProcess id="Subprocess10H.bpmn" name="Phase H">
+      <bpmn:incoming>Flow_0fi9vqo</bpmn:incoming>
+      <bpmn:outgoing>Flow_0p88n46</bpmn:outgoing>
+    </bpmn:subProcess>
+    <bpmn:subProcess id="Subprocess10G.bpmn" name="Phase G">
+      <bpmn:incoming>Flow_0cy8lw9</bpmn:incoming>
+      <bpmn:outgoing>Flow_0fi9vqo</bpmn:outgoing>
+    </bpmn:subProcess>
+    <bpmn:sequenceFlow id="Flow_1w8g7e6" sourceRef="StartEvent_1" targetRef="Subprocess10F.bpmn" />
+    <bpmn:sequenceFlow id="Flow_0p88n46" sourceRef="Subprocess10H.bpmn" targetRef="Event_112hinb" />
+    <bpmn:sequenceFlow id="Flow_0cy8lw9" sourceRef="Subprocess10F.bpmn" targetRef="Subprocess10G.bpmn" />
+    <bpmn:sequenceFlow id="Flow_0fi9vqo" sourceRef="Subprocess10G.bpmn" targetRef="Subprocess10H.bpmn" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Main">
+      <bpmndi:BPMNShape id="BPMNShape_0jetqhf" bpmnElement="StartEvent_1">
+        <dc:Bounds x="152" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_112hinb_di" bpmnElement="Event_112hinb">
+        <dc:Bounds x="725" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_09nbfa1_di" bpmnElement="Subprocess10F.bpmn">
+        <dc:Bounds x="243" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1rinnal_di" bpmnElement="Subprocess10H.bpmn">
+        <dc:Bounds x="563" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_104x9p3_di" bpmnElement="Subprocess10G.bpmn">
+        <dc:Bounds x="403" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1w8g7e6_di" bpmnElement="Flow_1w8g7e6">
+        <di:waypoint x="188" y="120" />
+        <di:waypoint x="243" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0p88n46_di" bpmnElement="Flow_0p88n46">
+        <di:waypoint x="663" y="120" />
+        <di:waypoint x="725" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0cy8lw9_di" bpmnElement="Flow_0cy8lw9">
+        <di:waypoint x="343" y="120" />
+        <di:waypoint x="403" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0fi9vqo_di" bpmnElement="Flow_0fi9vqo">
+        <di:waypoint x="503" y="120" />
+        <di:waypoint x="563" y="120" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1tfwpqy">
+    <bpmndi:BPMNPlane id="BPMNPlane_0e3txc6" bpmnElement="Subprocess10F.bpmn" />
+  </bpmndi:BPMNDiagram>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_0vnx85b">
+    <bpmndi:BPMNPlane id="BPMNPlane_1mfnlno" bpmnElement="Subprocess10H.bpmn" />
+  </bpmndi:BPMNDiagram>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_192do8o">
+    <bpmndi:BPMNPlane id="BPMNPlane_1v13939" bpmnElement="Subprocess10G.bpmn" />
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
